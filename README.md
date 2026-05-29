@@ -44,8 +44,15 @@ The pipeline follows the **Medallion Architecture** — ingesting raw medical da
               │
               ▼
    ┌─────────────────────┐
+   │   RISK ANALYSIS     │
+   │  Patient Risk       │
+   │  Scoring Layer      │
+   └──────────┬──────────┘
+              │
+              ▼
+   ┌─────────────────────┐
    │     DASHBOARD       │
-   │  5 Interactive      │
+   │  6 Interactive      │
    │  Databricks Charts  │
    └─────────────────────┘
 ```
@@ -117,6 +124,14 @@ The pipeline follows the **Medallion Architecture** — ingesting raw medical da
 | 3 | Analyzed calcium, pH, osmolarity and urea by stone status |
 | 4 | Saved final analytics to Delta Table: gold_kidney_stone |
 
+### 🔴 Risk Analysis Layer — Patient Risk Scoring
+| Step | Action |
+|------|--------|
+| 1 | Read data from silver_kidney_stone Delta Table |
+| 2 | Created custom risk categories based on calcium levels |
+| 3 | Performed correlation analysis between features and stone presence |
+| 4 | Saved risk data to Delta Table: gold_risk_analysis |
+
 ---
 
 ## 📈 Key Insights Discovered
@@ -135,18 +150,17 @@ The pipeline follows the **Medallion Architecture** — ingesting raw medical da
 
 | Risk Category | Patient Count | Percentage |
 |---------------|--------------|------------|
-| High Risk | 31 | 34% |
-| Medium Risk | 18 | 20% |
-| Low Risk | 41 | 46% |
+| 🟢 Low Risk | 41 | 46% |
+| 🟡 Medium Risk | 18 | 20% |
+| 🔴 High Risk | 31 | 34% |
 
-*Key Finding:* Calcium level is the strongest 
-predictor of kidney stones with 0.46 correlation!
+**Key Finding:** Calcium level is the strongest predictor of kidney stones with **0.46 correlation score!**
 
 ---
 
 ## 📊 Dashboard Preview
 
-> 5 Interactive visualizations built on Databricks Dashboard
+> 6 Interactive visualizations built on Databricks Dashboard
 
 ![Dashboard Part 1](dashboards/dashboard_1.png)
 
@@ -165,6 +179,7 @@ predictor of kidney stones with 0.46 correlation!
 | 3 | Average pH Level Comparison | Bar Chart | More acidic in stone patients |
 | 4 | Average Urea Level Comparison | Bar Chart | Higher urea in stone patients |
 | 5 | Average Osmolarity Comparison | Bar Chart | More concentrated urine in stone patients |
+| 6 | Patient Risk Distribution | Bar Chart | 34% patients are High Risk |
 
 ---
 
@@ -176,10 +191,16 @@ Kidney-stone-data-pipeline/
 ├── notebooks/
 │   ├── 01_Bronze_Layer.py       ← Raw data ingestion
 │   ├── 02_Silver_Layer.py       ← Data cleaning & transformation
-│   └── 03_Gold_Layer.py         ← Analytics & insights
+│   ├── 03_Gold_Layer.py         ← Analytics & insights
+│   └── 04_Risk_Analysis.py      ← Patient risk scoring
 │
 ├── dataset/
 │   └── kidney-stone-dataset.csv ← Source dataset from Kaggle
+│
+├── dashboards/
+│   ├── dashboard_1.png          ← Dashboard screenshot 1
+│   ├── dashboard_2.png          ← Dashboard screenshot 2
+│   └── dashboard_3.png          ← Dashboard screenshot 3
 │
 └── README.md                    ← Project documentation
 ```
@@ -192,17 +213,14 @@ Kidney-stone-data-pipeline/
 |------|--------|
 | 1 | Sign up at Databricks Community Edition (free) |
 | 2 | Upload kidney-stone-dataset.csv to Databricks Volume |
-| 3 | Create notebook 01_Bronze_Layer and run |
-| 4 | Create notebook 02_Silver_Layer and run |
-| 5 | Create notebook 03_Gold_Layer and run |
-| 6 | Create Databricks Dashboard using gold_kidney_stone table |
+| 3 | Run 01_Bronze_Layer.py |
+| 4 | Run 02_Silver_Layer.py |
+| 5 | Run 03_Gold_Layer.py |
+| 6 | Run 04_Risk_Analysis.py |
+| 7 | Create Databricks Dashboard using gold_kidney_stone table |
 
 ---
 
 ## 🏷️ Tags
 
 `Data Engineering` `PySpark` `Databricks` `Delta Lake` `Python` `Medallion Architecture` `Healthcare Analytics` `Kidney Stone Analysis` `Spark SQL` `Resume Project`
-
----
-
-
