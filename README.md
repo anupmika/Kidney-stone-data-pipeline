@@ -4,6 +4,7 @@
 ![PySpark](https://img.shields.io/badge/PySpark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white)
 ![Databricks](https://img.shields.io/badge/Databricks-FF3621?style=for-the-badge&logo=databricks&logoColor=white)
 ![SQL](https://img.shields.io/badge/Spark%20SQL-4479A1?style=for-the-badge&logo=apache&logoColor=white)
+![Delta Lake](https://img.shields.io/badge/Delta%20Lake-00ADD8?style=for-the-badge)
 
 ---
 
@@ -134,11 +135,11 @@ The pipeline follows the **Medallion Architecture** — ingesting raw medical da
 
 > 5 Interactive visualizations built on Databricks Dashboard
 
-![Dashboard Part 1](dashboard_1.png)
+![Dashboard Part 1](dashboards/dashboard_1.png)
 
-![Dashboard Part 2](dashboard_2.png)
+![Dashboard Part 2](dashboards/dashboard_2.png)
 
-![Dashboard Part 3](dashboard_3.png)
+![Dashboard Part 3](dashboards/dashboard_3.png)
 
 ---
 
