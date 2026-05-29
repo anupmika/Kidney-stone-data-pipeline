@@ -1,3 +1,9 @@
+PROJECT : Kidney Stone Risk Analysis
+LAYER : Bronze Layer - Raw Data Ingestion
+AUTHOR : Anupmika
+DATE : 28 May 2026
+TOOL : PySpark + Databricks
+
 # Databricks notebook source
 dbutils.fs.ls("/Volumes/workspace/default/kidney_stone_volume/kidney-stone-dataset.csv")
 
