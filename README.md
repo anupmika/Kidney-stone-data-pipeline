@@ -131,6 +131,19 @@ The pipeline follows the **Medallion Architecture** — ingesting raw medical da
 
 ---
 
+## 🔴 Risk Analysis
+
+| Risk Category | Patient Count | Percentage |
+|---------------|--------------|------------|
+| High Risk | 31 | 34% |
+| Medium Risk | 18 | 20% |
+| Low Risk | 41 | 46% |
+
+*Key Finding:* Calcium level is the strongest 
+predictor of kidney stones with 0.46 correlation!
+
+---
+
 ## 📊 Dashboard Preview
 
 > 5 Interactive visualizations built on Databricks Dashboard
@@ -192,7 +205,4 @@ Kidney-stone-data-pipeline/
 
 ---
 
-## 👩‍💻 Author
 
-**Anupmika**
-GitHub: [@anupmika](https://github.com/anupmika)
