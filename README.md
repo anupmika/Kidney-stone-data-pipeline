@@ -125,8 +125,20 @@ The pipeline follows the **Medallion Architecture** — ingesting raw medical da
 | Patient Count | 45 | 45 | Perfectly balanced dataset |
 | Avg Calcium Level | 2.62 | 5.41 | Stone patients have 2x higher calcium |
 | Avg pH Level | 6.10 | 5.97 | Stone patients have more acidic urine |
-| Avg Osmolarity | 565.29 | 639.38 | Stone patients have more concentrated urine |
 | Avg Urea Level | 237.11 | 279.29 | Stone patients have higher urea levels |
+| Avg Osmolarity | 565.29 | 639.38 | Stone patients have more concentrated urine |
+
+---
+
+## 📊 Dashboard Preview
+
+> 5 Interactive visualizations built on Databricks Dashboard
+
+![Dashboard Part 1](dashboard_1.png)
+
+![Dashboard Part 2](dashboard_2.png)
+
+![Dashboard Part 3](dashboard_3.png)
 
 ---
 
