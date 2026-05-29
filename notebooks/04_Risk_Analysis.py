@@ -1,3 +1,9 @@
+PROJECT : Kidney Stone Risk Analysis
+LAYER : Risk Analysis - Patient Risk Scoring
+AUTHOR : Varnika
+DATE : 28 May 2026
+TOOL : PySpark + Databricks
+
 # Databricks notebook source
 df_risk = spark.sql("SELECT * FROM silver_kidney_stone")
 df_risk.show()
